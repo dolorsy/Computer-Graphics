@@ -413,6 +413,85 @@ void Draw_Skybox(float x, float y, float z, float width, float height, float len
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 }
+int wall,elevdoor;
+void Cube(int x,int y,int z,int texture){
+	float vertices[]=
+	{
+		//front face
+		x,y,z,
+		x,y+1,z,
+		x+1,y+1,z,
+		x+1,y,z,
+		//back face
+		x,y,z+1,
+		x,y+1,z+1,
+		x+1,y+1,z+1,
+		x+1,y,z+1,
+		//right face
+		x+1,y,z,
+		x+1,y+1,z,
+		x+1,y+1,z+1,
+		x+1,y,z+1,
+		//left side
+		x,y,z,
+		x,y+1,z,
+		x,y+1,z+1,
+		x,y,z+1,
+		//up face
+		x,y+1,z,
+		x,y+1,z+1,
+		x+1,y+1,z+1,
+		x+1,y+1,z,
+		//bottom side
+		x,y,z,
+		x,y,z+1,
+		x+1,y,z+1,
+		x+1,y,z,	
+	};	
+
+	//front face with door
+	glBindTexture(GL_TEXTURE_2D,elevdoor);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3d(vertices[0],vertices[1],vertices[2]);
+	glTexCoord2d(0,1);
+	glVertex3d(vertices[3],vertices[4],vertices[5]);
+	glTexCoord2d(1,1);
+	glVertex3d(vertices[6],vertices[7],vertices[8]);
+	glTexCoord2d(1,0);
+	glVertex3d(vertices[9],vertices[10],vertices[11]);
+	glEnd();
+	glBindTexture(GL_TEXTURE_2D,texture);
+	glBegin(GL_QUADS);
+	for (int i = 12; i < 72; i+=12)
+	{
+		glTexCoord2d(0,0);
+		glVertex3d(vertices[i],vertices[i+1],vertices[i+2]);
+		glTexCoord2d(0,1);
+		glVertex3d(vertices[i+3],vertices[i+4],vertices[i+5]);
+		glTexCoord2d(1,1);
+		glVertex3d(vertices[i+6],vertices[i+7],vertices[i+8]);
+		glTexCoord2d(1,0);
+		glVertex3d(vertices[i+9],vertices[i+10],vertices[i+11]);
+	}
+	glEnd();
+}
+int c=0;
+void Elevator(int x,int y,int z){
+	glTranslated(0,c,0);
+	Cube(x,y,z,wall);
+	//logic
+	if(keys[VK_NUMPAD0]) c=0;
+	if(keys[VK_NUMPAD1]) c=1;
+	if(keys[VK_NUMPAD2]) c=2;
+	if(keys[VK_NUMPAD3]) c=3;
+	if(keys[VK_NUMPAD4]) c=4;
+	if(keys[VK_NUMPAD5]) c=5;
+	if(keys[VK_NUMPAD6]) c=6;
+	if(keys[VK_NUMPAD7]) c=7;
+	if(keys[VK_NUMPAD8]) c=8;
+	if(keys[VK_NUMPAD9]) c=9;
+}
 
 
 
@@ -432,6 +511,11 @@ int InitGL(GLvoid)										// All Setup For OpenGL Goes Here
 	//enable texture 
 	initCameraPosition();
 	glEnable(GL_TEXTURE_2D);
+	face=LoadTexture("bricks.bmp",255);
+	door=LoadTexture("door1.bmp",255);
+	carpet=LoadTexture("carpet.bmp",255);
+	wall=LoadTexture("iron.bmp");
+	elevdoor=LoadTexture("elevdoor.bmp");
 
 	initSkyBox();
 	initAriPlaneModels();
@@ -449,6 +533,10 @@ void DrawGLScene(GLvoid)									// Here's Where We Do All The Drawing
 	Draw_Skybox(-50, 0, -500, 4000, 2000, 10000);
 	baseGrassGround(800,800);
 	drawRoom(30,20,20);
+	glPushMatrix();
+	glScaled(10,5,5);
+	Elevator(50,50,50);
+	glPopMatrix();
 	settingAriplaneModel();
 	glFlush();											// Done Drawing The Quad	
 
