@@ -17,7 +17,7 @@
 #include <3DTexture.h>
 #include <SOIL2.h>
 #include "Manager.cpp"
-
+using namespace manager;
 #define _CRT_SECURE_NO_WARNINGS
 
 
@@ -77,7 +77,6 @@ void initAriPlaneModels(){
 	toy.Materials[3].tex.Load("weels.bmp");
 }
 void settingAriplaneModel(){
-
 	glPushMatrix();
 	toyX+=10;
 	toyZ-=10;
