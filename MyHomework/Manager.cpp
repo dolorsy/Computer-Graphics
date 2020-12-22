@@ -21,7 +21,7 @@ public:
     Parent_found_Exception(string out) {
         this->out = out;
     }
-    const char*what() const noexcept {
+	const char*what() const throw(){
         return (string("this shape has its parent which is ")+out).c_str();
     }
 };
@@ -33,7 +33,7 @@ public:
     CouldNotSetPosition(string out) {
         this->out = out;
     }
-    const char*what() const noexcept {
+    const char*what() const throw() {
         return (string("can't set position ")+out).c_str();
     }
 };
@@ -103,7 +103,7 @@ public:
 
     _3D_double operator/(double other)const {
         return _3D_double(getX()/other,getY()/other,getZ()/other);
-    }
+    }/*
     bool operator==(_3D_double other)const {
         return getX()==other.getX()&&getY()==other.getY()&&getZ()==other.getZ();
     }
@@ -118,7 +118,7 @@ public:
     }
     bool operator>=(_3D_double other)const {
         return ! ((*this)<other);
-    }
+    }*/
     string toString()const {
         stringstream out;
         out<<"("<<first.first<<","<<first.second<<","<<second<<")";
@@ -126,9 +126,9 @@ public:
     }
 };
 
-class Shape:public Object {
+class Shape:public Object {//search for =0; to get all abstract methods
 protected:
-    vector<Shape*>children= vector<Shape*>(10);
+    vector<Shape*>children;
     _3D_double center;
     _3D_double length;
 
@@ -138,16 +138,19 @@ protected:
         }
         child->children[0]=this;
         children.push_back(child);
-        child->setPosition(this->center);
     }
     virtual bool isIn(Shape*child){
-    //todo: we need geometry to do this
+		for(_3D_double i:child->getAllPoints()){
+			if(!isSharedWith(i))
+				return false;
+		}
+
         return true;
     };
     virtual void drawShape()=0;
 
 public:
-    Shape( Shape*parent,_3D_double center,_3D_double length):length(length),center(center) {
+    Shape( Shape*parent,_3D_double center,_3D_double length):children(vector<Shape*>(10)),length(length),center(center) {
         if(parent != nullptr) {
             parent->addChild(this);
         } else {
@@ -160,10 +163,9 @@ public:
         return children[0];
     }
 
-    void setPosition(_3D_double p) {
+    void setPosition(_3D_double p) {//set position according to 0,0,0
         _3D_double cur = center;
         if(getParent()!=nullptr) {
-            p = p + getParent()->getPosition();
             center = p;
             if(!getParent()->isIn(this)) {
                 center = cur;
@@ -186,7 +188,12 @@ public:
 
     void draw(){
         this->drawShape();
+		bool x = true;
         for(Shape*i:children){
+			if(x){
+				x=false;
+				continue;
+			}
             if(i!=nullptr)
                 i->draw();
         }
@@ -204,8 +211,12 @@ public:
         out+= center.toString();
         return out+"}";
     }
+	virtual bool isSharedWith(_3D_double p){
+			//todo: it needs a geometry algorithm to work properly
+		return true;
+	}
     virtual vector<_3D_double> getAllPoints()=0;
-    virtual bool isSharedWith(_3D_double p)=0;
+    
 };
 
 template<typename Base, typename T>

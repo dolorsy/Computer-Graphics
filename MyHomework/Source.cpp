@@ -16,7 +16,7 @@
 #include <camera.h>
 #include <3DTexture.h>
 #include <SOIL2.h>
-
+#include "Manager.cpp"
 
 #define _CRT_SECURE_NO_WARNINGS
 
