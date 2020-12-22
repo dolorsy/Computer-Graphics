@@ -65,6 +65,7 @@
   <ItemGroup>
     <ClCompile Include="3DTexture.cpp" />
     <ClCompile Include="camera.cpp" />
+    <ClCompile Include="Manager.cpp" />
     <ClCompile Include="Model_3DS.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="texture.cpp" />

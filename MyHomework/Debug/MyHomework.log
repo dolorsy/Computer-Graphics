@@ -1,21 +1,21 @@
-﻿Build started 12/20/2020 7:40:44 PM.
-     1>Project "F:\Collage\3erd Year\بيانيات\عملي\Project\مشروع بيانيات\Final Project\Final Project\MyHomework\MyHomework.vcxproj" on node 2 (Build target(s)).
+﻿Build started 22/12/2020 07:26:33 م.
+     1>Project "D:\a projects\gituhub\Computer-Graphics\MyHomework\MyHomework.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Manager.cpp Source.cpp
+         Manager.cpp
+         Generating Code...
+         Skipping... (no relevant changes detected)
          Source.cpp
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Collage\3erd Year\بيانيات\عملي\Project\مشروع بيانيات\Final Project\Final Project\Debug\MyHomework.exe" /INCREMENTAL /NOLOGO GLAUX.lib GLU32.lib glut.lib OPENGL32.lib glut32.lib "soil2-debug.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\Collage\3erd Year\بيانيات\عملي\Project\مشروع بيانيات\Final Project\Final Project\Debug\MyHomework.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Collage\3erd Year\بيانيات\عملي\Project\مشروع بيانيات\Final Project\Final Project\Debug\MyHomework.lib" /MACHINE:X86 Debug\3DTexture.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\a projects\gituhub\Computer-Graphics\Debug\MyHomework.exe" /INCREMENTAL /NOLOGO GLAUX.lib GLU32.lib glut.lib OPENGL32.lib glut32.lib "soil2-debug.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\a projects\gituhub\Computer-Graphics\Debug\MyHomework.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\a projects\gituhub\Computer-Graphics\Debug\MyHomework.lib" /MACHINE:X86 Debug\3DTexture.obj
          Debug\camera.obj
+         Debug\Manager.obj
          Debug\Model_3DS.obj
          Debug\Source.obj
          Debug\texture.obj
-     1>soil2-debug.lib(image_DXT.obj) : warning LNK4099: PDB 'soil2-debug.pdb' was not found with 'soil2-debug.lib(image_DXT.obj)' or at 'F:\Collage\3erd Year\???????\????\Project\????? ???????\Final Project\Final Project\Debug\soil2-debug.pdb'; linking object as if no debug info
-     1>soil2-debug.lib(image_helper.obj) : warning LNK4099: PDB 'soil2-debug.pdb' was not found with 'soil2-debug.lib(image_helper.obj)' or at 'F:\Collage\3erd Year\???????\????\Project\????? ???????\Final Project\Final Project\Debug\soil2-debug.pdb'; linking object as if no debug info
-     1>soil2-debug.lib(SOIL2.obj) : warning LNK4099: PDB 'soil2-debug.pdb' was not found with 'soil2-debug.lib(SOIL2.obj)' or at 'F:\Collage\3erd Year\???????\????\Project\????? ???????\Final Project\Final Project\Debug\soil2-debug.pdb'; linking object as if no debug info
-     1>soil2-debug.lib(wfETC.obj) : warning LNK4099: PDB 'soil2-debug.pdb' was not found with 'soil2-debug.lib(wfETC.obj)' or at 'F:\Collage\3erd Year\???????\????\Project\????? ???????\Final Project\Final Project\Debug\soil2-debug.pdb'; linking object as if no debug info
-         MyHomework.vcxproj -> F:\Collage\3erd Year\بيانيات\عملي\Project\مشروع بيانيات\Final Project\Final Project\Debug\MyHomework.exe
-     1>Done Building Project "F:\Collage\3erd Year\بيانيات\عملي\Project\مشروع بيانيات\Final Project\Final Project\MyHomework\MyHomework.vcxproj" (Build target(s)).
+         MyHomework.vcxproj -> D:\a projects\gituhub\Computer-Graphics\Debug\MyHomework.exe
+     1>Done Building Project "D:\a projects\gituhub\Computer-Graphics\MyHomework\MyHomework.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:02.06
+Time Elapsed 00:00:04.30
