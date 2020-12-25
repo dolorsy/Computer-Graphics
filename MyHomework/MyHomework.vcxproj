@@ -66,9 +66,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="3DTexture.cpp" />
+    <ClCompile Include="AirCraft.cpp" />
     <ClCompile Include="camera.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="Model_3DS.cpp" />
+    <ClCompile Include="ClosedBuilding.cpp" />
     <ClCompile Include="Roof.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="room.cpp" />

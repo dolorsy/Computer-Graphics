@@ -12,15 +12,16 @@
 #include <math.h>
 #include <texture.h>
 #include <iostream>
-#include <Model_3DS.h>
 #include <camera.h>
-#include <3DTexture.h>
 #include <SOIL2.h>
 #include "Manager.cpp"
 #include"room.cpp"
 #include "Roof.cpp"
 #define _CRT_SECURE_NO_WARNINGS
 #include<irrKlang.h>
+
+#include "ClosedBuilding.cpp"
+
 
 
 
@@ -112,28 +113,7 @@ void initCameraPosition();
 
  }
 
- Model_3DS toy;
  GLfloat toyX = -100,toyY=200,toyZ=-100;
-void initAriPlaneModels(){
-	/*toy.Load("B 777 200.3ds");
-	toy.Materials[0].tex.Load("body-france.bmp");
-	toy.Materials[1].tex.Load("engine.bmp");
-	toy.Materials[2].tex.Load("turbine.bmp");
-	toy.Materials[3].tex.Load("weels.bmp");*/
-}
-void settingAriplaneModel(){
-	glPushMatrix();
-	toyX+=10;
-	toyZ-=10;
-	glTranslated(toyX,toyY,toyX);
-	toy.pos.x=0;
-	toy.pos.y=0;
-	toy.pos.z=100;
-	toy.Draw();
-	glPopMatrix();
-
-}
-
 
 
 void street(float high,float width
@@ -234,155 +214,7 @@ void initSkyBox(){
 
 
 int a = 0,b=0;
-/*
-void drawRoom(int w,int h,int d){
-	glBindTexture(GL_TEXTURE_2D,face);
-	//front face
-	glBegin(GL_QUADS);
 
-	//First part	
-	glTexCoord2d(0,0);
-	glVertex3d(0,0,0);
-	
-	glTexCoord2d(0,1);
-	glVertex3d(0,h,0);
-	
-	glTexCoord2d(1,1);
-	glVertex3d(w/4,h,0);
-	
-	glTexCoord2d(1,0);
-	glVertex3d(w/4,0,0);
-
-	//second part
-		glTexCoord2d(0,0);
-
-	glVertex3d(w/4,2*h/3,0);
-		glTexCoord2d(0,1);
-
-	glVertex3d(w/4,h,0);
-		glTexCoord2d(1,1);
-
-	glVertex3d(3*w/4,h,0);
-		glTexCoord2d(1,0);
-
-	glVertex3d(3*w/4,2*h/3,0);
-
-	//third part
-			glTexCoord2d(0,0);
-
-	glVertex3d(3*w/4,0,0);
-			glTexCoord2d(0,1);
-
-	glVertex3d(3*w/4,h,0);
-			glTexCoord2d(1,1);
-
-	glVertex3d(w,h,0);
-			glTexCoord2d(1,0);
-
-	glVertex3d(w,0,0);
-
-
-	glEnd();
-
-	
-	//back face
-	glBegin(GL_QUADS);
-		glTexCoord2d(0,0);
-
-	glVertex3d(0,0,d);
-		glTexCoord2d(0,1);
-
-	glVertex3d(0,h,d);
-		glTexCoord2d(1,1);
-
-	glVertex3d(w,h,d);
-		glTexCoord2d(1,0);
-
-	glVertex3d(w,0,d);
-	glEnd();
-	
-	//right face
-	glBegin(GL_QUADS);
-	glTexCoord2d(0,0);
-	glVertex3d(w,0,0);
-	glTexCoord2d(0,1);
-	glVertex3d(w,h,0);
-	glTexCoord2d(1,1);
-	glVertex3d(w,h,d);
-	glTexCoord2d(1,0);
-	glVertex3d(w,0,d);
-	glEnd();
-	
-	//left face
-	glBegin(GL_QUADS);
-	glTexCoord2d(0,0);
-	glVertex3d(0,0,0);
-	glTexCoord2d(0,1);
-	glVertex3d(0,h,0);
-	glTexCoord2d(1,1);
-	glVertex3d(0,h,d);
-	glTexCoord2d(1,0);
-	glVertex3d(0,0,d);
-	glEnd();
-	
-	//up face
-	glBegin(GL_QUADS);
-		glTexCoord2d(0,0);
-glVertex3d(0,h,0);
-	glTexCoord2d(0,1);
-	glVertex3d(0,h,d);
-	glTexCoord2d(1,1);
-	glVertex3d(w,h,d);
-	glTexCoord2d(1,0);
-	glVertex3d(w,h,0);
-	glEnd();
-	
-	//bottom face 
-	glPushMatrix();
-	glBindTexture(GL_TEXTURE_2D,carpet);
-	glBegin(GL_QUADS);
-	glTexCoord2d(0,0);  glVertex3d(0,0,0);
-	glTexCoord2d(0,1);  glVertex3d(0,0,d);
-	glTexCoord2d(1,1);	glVertex3d(w,0,d);
-	glTexCoord2d(1,0);  glVertex3d(w,0,0);
-	glEnd();
-	glPopMatrix();
-	//doors
-	//left door
-	glPushMatrix();
-	glTranslated(a,0,0);
-	glBindTexture(GL_TEXTURE_2D,door);
-	glBegin(GL_QUADS);
-	glTexCoord2d(0,0);
-	glVertex3d(w/4,0,0);
-	glTexCoord2d(0,1);
-	glVertex3d(w/4,2*h/3,0);
-	glTexCoord2d(1,1);
-	glVertex3d(2*w/4,2*h/3,0);
-	glTexCoord2d(1,0);
-	glVertex3d(2*w/4,0,0);
-	glEnd();
-	glPopMatrix();
-	
-	glPushMatrix();
-	glTranslated(b,0,0);
-	glBegin(GL_QUADS);
-	glTexCoord2d(0,0);
-	glVertex3d(2*w/4,0,0);
-	glTexCoord2d(0,1);
-	glVertex3d(2*w/4,2*h/3,0);
-	glTexCoord2d(1,1);
-	glVertex3d(3*w/4,2*h/3,0);
-	glTexCoord2d(1,0);
-	glVertex3d(3*w/4,0,0);
-	glEnd();
-	glPopMatrix();
-
-	if(keys[VK_ADD]) { a=-w/4; b=w/4;}
-	if(keys[VK_SUBTRACT]) { a=0; b=0;}
-	
-}
-*/
 
 void baseGrassGround(float high,float width)
 {
@@ -565,7 +397,6 @@ void Elevator(int x,int y,int z){
 
 
 
-
 int InitGL(GLvoid)										// All Setup For OpenGL Goes Here
 {
 	glShadeModel(GL_SMOOTH);							// Enable Smooth Shading
@@ -589,7 +420,7 @@ int InitGL(GLvoid)										// All Setup For OpenGL Goes Here
 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	initSkyBox();
-	initAriPlaneModels();
+	//airplane = new AirCraft(70,70,70);
 	return TRUE;										// Initialization Went OK
 }
 
@@ -600,10 +431,12 @@ void DrawGLScene(GLvoid)									// Here's Where We Do All The Drawing
 	cameraControl();
 
 	Roof* roof;
+	NormalBuilding* normal;
 	roof = new Roof(nullptr, _3D_double(60, 100, -100), _3D_double(70, 100, 70),wall,door,carpet);
 	Draw_Skybox(-50, 0, -500, 4000, 2000, 10000);
 	baseGrassGround(800,800);
 	roof->draw();
+	//airplane->DrawCraft();
 	//settingAriplaneModel();
 	glFlush();											// Done Drawing The Quad	
 

@@ -64,5 +64,13 @@ static void drawRoom(vector<_3D_double>&allPoints,GLuint wall){
 	drawSide(allPoints[13], allPoints[11], allPoints[2], allPoints[3], wall);
 
 }
+static void drawClosed(vector<_3D_double>&allPoints,GLuint wall){
+		drawSide(allPoints[0], allPoints[1], allPoints[2], allPoints[3], wall);
+	drawSide(allPoints[4], allPoints[5], allPoints[6], allPoints[7], wall);
+	drawSide(allPoints[0], allPoints[1], allPoints[5], allPoints[4], wall);
+	drawSide(allPoints[1], allPoints[5], allPoints[6], allPoints[2], wall);
+
+}
+
 };
 #endif

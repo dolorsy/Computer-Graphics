@@ -42,5 +42,11 @@
     <ClCompile Include="Roof.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AirCraft.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClosedBuilding.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
