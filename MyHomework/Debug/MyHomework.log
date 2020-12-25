@@ -1,0 +1,55 @@
+﻿Build started 12/25/2020 12:43:15 PM.
+     1>Project "C:\Users\dolor\Desktop\Computer-Graphics\Computer-Graphics\MyHomework\MyHomework.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\ayham\Desktop\New folder\Computer-Graphics\includeSound" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt 3DTexture.cpp camera.cpp Manager.cpp Model_3DS.cpp Roof.cpp Source.cpp room.cpp texture.cpp tools.cpp
+         tools.cpp
+         texture.cpp
+     1>c:\users\dolor\desktop\computer-graphics\computer-graphics\myhomework\texture.cpp(43): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(218) : see declaration of 'fopen'
+         room.cpp
+         Source.cpp
+         Roof.cpp
+         Model_3DS.cpp
+     1>c:\users\dolor\desktop\computer-graphics\computer-graphics\myhomework\model_3ds.cpp(160): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+     1>c:\users\dolor\desktop\computer-graphics\computer-graphics\myhomework\model_3ds.cpp(182): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(200) : see declaration of 'strtok'
+     1>c:\users\dolor\desktop\computer-graphics\computer-graphics\myhomework\model_3ds.cpp(212): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(218) : see declaration of 'fopen'
+     1>c:\users\dolor\desktop\computer-graphics\computer-graphics\myhomework\model_3ds.cpp(891): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+         Manager.cpp
+         camera.cpp
+         3DTexture.cpp
+     1>c:\users\dolor\desktop\computer-graphics\computer-graphics\myhomework\3dtexture.cpp(61): warning C4996: 'strlwr': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _strlwr. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(250) : see declaration of 'strlwr'
+     1>c:\users\dolor\desktop\computer-graphics\computer-graphics\myhomework\3dtexture.cpp(61): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _strdup. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(241) : see declaration of 'strdup'
+     1>c:\users\dolor\desktop\computer-graphics\computer-graphics\myhomework\3dtexture.cpp(65): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(200) : see declaration of 'strtok'
+     1>c:\users\dolor\desktop\computer-graphics\computer-graphics\myhomework\3dtexture.cpp(77): warning C4996: 'strlwr': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _strlwr. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(250) : see declaration of 'strlwr'
+     1>c:\users\dolor\desktop\computer-graphics\computer-graphics\myhomework\3dtexture.cpp(142): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(218) : see declaration of 'fopen'
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\dolor\Desktop\Computer-Graphics\Computer-Graphics\Debug\MyHomework.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\ayham\Desktop\New folder\Computer-Graphics\libSound" GLAUX.lib GLU32.lib glut.lib OPENGL32.lib glut32.lib "soil2-debug.lib" irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\dolor\Desktop\Computer-Graphics\Computer-Graphics\Debug\MyHomework.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\dolor\Desktop\Computer-Graphics\Computer-Graphics\Debug\MyHomework.lib" /MACHINE:X86 Debug\3DTexture.obj
+         Debug\camera.obj
+         Debug\Manager.obj
+         Debug\Model_3DS.obj
+         Debug\Roof.obj
+         Debug\Source.obj
+         Debug\room.obj
+         Debug\texture.obj
+         Debug\tools.obj
+         LINK : C:\Users\dolor\Desktop\Computer-Graphics\Computer-Graphics\Debug\MyHomework.exe not found or not built by the last incremental link; performing full link
+     1>soil2-debug.lib(image_DXT.obj) : warning LNK4099: PDB 'soil2-debug.pdb' was not found with 'soil2-debug.lib(image_DXT.obj)' or at 'C:\Users\dolor\Desktop\Computer-Graphics\Computer-Graphics\Debug\soil2-debug.pdb'; linking object as if no debug info
+     1>soil2-debug.lib(image_helper.obj) : warning LNK4099: PDB 'soil2-debug.pdb' was not found with 'soil2-debug.lib(image_helper.obj)' or at 'C:\Users\dolor\Desktop\Computer-Graphics\Computer-Graphics\Debug\soil2-debug.pdb'; linking object as if no debug info
+     1>soil2-debug.lib(SOIL2.obj) : warning LNK4099: PDB 'soil2-debug.pdb' was not found with 'soil2-debug.lib(SOIL2.obj)' or at 'C:\Users\dolor\Desktop\Computer-Graphics\Computer-Graphics\Debug\soil2-debug.pdb'; linking object as if no debug info
+     1>soil2-debug.lib(wfETC.obj) : warning LNK4099: PDB 'soil2-debug.pdb' was not found with 'soil2-debug.lib(wfETC.obj)' or at 'C:\Users\dolor\Desktop\Computer-Graphics\Computer-Graphics\Debug\soil2-debug.pdb'; linking object as if no debug info
+         MyHomework.vcxproj -> C:\Users\dolor\Desktop\Computer-Graphics\Computer-Graphics\Debug\MyHomework.exe
+     1>Done Building Project "C:\Users\dolor\Desktop\Computer-Graphics\Computer-Graphics\MyHomework\MyHomework.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:08.52
